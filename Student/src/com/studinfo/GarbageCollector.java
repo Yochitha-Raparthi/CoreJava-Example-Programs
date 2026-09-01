@@ -1,17 +1,17 @@
 package com.studinfo;
 class A{
 	B b;
-	@Override
-    protected void finalize() throws Throwable {
-        System.out.println("finalize called");
-    }
+//	@Override
+//    protected void finalize() throws Throwable {
+//        System.out.println("finalize called");
+//    }
 }
 class B{
 	A a;
-	@Override
-    protected void finalize() throws Throwable {
-        System.out.println("finalize called");
-    }
+//	@Override
+//    protected void finalize() throws Throwable {
+//        System.out.println("finalize called");
+//    }
 }
 public class GarbageCollector {
     @Override
@@ -34,22 +34,21 @@ public class GarbageCollector {
 		g3=g2;
 	    g3.function();
 	    new GarbageCollector().hello();
-		System.out.println("After nullfying");
-		System.out.println(g1);
-		System.out.println(g2);
-		System.out.println(g3);
-		A obj1=new A();
-		B obj2=new B();
-//		obj1.a=obj2;
-//		obj2.b=obj1;
-		obj2.a=obj1;
-		obj1.b=obj2;
-		obj1=null;
-		obj2=null;
-		System.out.println(obj2);
-		System.out.println(obj1);
-//		System.out.println(obj1.b);
+//		System.out.println("After nullfying");
+//		System.out.println(g1);
+//		System.out.println(g2);
+//		System.out.println(g3);
+//		A obj1=new A();
+//		B obj2=new B();
+//		obj2.a=obj1;
+//		obj1.b=obj2;
+//		obj1=null;
+//		obj2=null;
+//		System.out.println(obj2);
+//		System.out.println(obj1);
+////		System.out.println(obj1.b);
 		System.gc();
+		
 		
 	}
 
