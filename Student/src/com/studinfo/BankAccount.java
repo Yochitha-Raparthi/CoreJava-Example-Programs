@@ -4,7 +4,8 @@ public class BankAccount {
     static long accNo;
     long accountNumber;
     String accountHolder;
-    double balance;{
+    double balance;
+    {
     	accNo++;
     }
 	public static void main(String[] args) {
