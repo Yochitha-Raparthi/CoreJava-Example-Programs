@@ -1,20 +1,18 @@
 package com.studinfo;
 
 public class Count {
-    static int cnt;
-    {
-    	cnt++;
-    }
+    int cnt=10;
+//    {
+//    	cnt++;
+//    }
 	public static void main(String[] args) {
 		Count c1=new Count();
 		
 		Count c2=new Count();
 		
-		Count c3=new Count();
+		c1.cnt=20;
 		
-		Count c4=new Count();
-		
-		System.out.println("Count : "+cnt);
+		System.out.println("Count : "+c1.cnt);
 	}
 
 }
