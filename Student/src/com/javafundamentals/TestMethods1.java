@@ -1,5 +1,4 @@
 package com.javafundamentals;
-
 public class TestMethods1 {
 
 	public static void factors(int n) {
@@ -81,6 +80,106 @@ public class TestMethods1 {
 		}
 		return false;
 	}
+	public static int larger(int a,int b,int c) {
+		if(a>b&&b>c) {
+			return a;
+		}else if(b>a&&b>c) {
+			return b;
+		}else {
+			return c;
+		}
+	}
+	public static int smaller(int a,int b,int c) {
+		if(a<b&&b<c) {
+			return a;
+		}else if(b<a&&b<c) {
+			return b;
+		}else {
+			return c;
+		}
+	}
+	public static int countOfDigits(int n) {
+		int cnt=0;
+		while(n>0) {
+			cnt++;
+			n=n/10;
+		}
+		return cnt;
+	}
+	public static int sumOfDigits(int n) {
+		int sum=0;
+		while(n>0) {
+			int rem=n%10;
+			sum+=rem;
+			n=n/10;
+		}
+		return sum;
+	}
+	public static boolean palindrome(int n) {
+		int num=n,sum=0;
+		while(n>0) {
+			int rem=n%10;
+			sum=sum*10+rem;
+			n=n/10;
+		}
+		if(sum==num) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static int reverseNumber(int n) {
+		int rev=0;
+		while(n>0) {
+			int rem=n%10;
+			rev=rev*10+rem;
+			n=n/10;
+		}
+		return rev;
+	}
+	
+	public static boolean isPrime(int n) {
+		for(int i=2;i*i<n;i++) {
+			if(n%i==0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static int factorial(int n) {
+		int num=1;
+		for(int i=n;i>0;i--) {
+			num*=i;
+		}
+		return num;
+	}
+	
+	public static boolean armstrongNumber(int n) {
+		int arm=0;
+		int num=n;
+		while(n>0) {
+			int rem=n%10;
+			arm+=(int)Math.pow(rem,countOfDigits(num));
+			n=n/10;
+		}
+		
+		if(arm==num) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public static int strongNumber(int n) {
+		int num=0;
+		while(n>0) {
+			int rem=n%10;
+			num+=factorial(rem);
+			n=n/10;
+		}
+		return num;
+	}
 	public static void main(String[] args) {
 		
 //        factors(20);
@@ -90,11 +189,28 @@ public class TestMethods1 {
 //		reverse(12345);
 //		sumOfEven(2,10);
 //		nTables(3);
-		if(perfectNumber(625)) {
-			System.out.println("It is  a perfect number");
-		}else {
-			System.out.println("Not a perfect number");
-		}
-	}
+//		if(perfectNumber(625)) {
+//			System.out.println("It is  a perfect number");
+//		}else {
+//			System.out.println("Not a perfect number");
+//		}
+//		int larger=larger(90,50,40);
+//		System.out.println("larger number is : "+larger);	
+//		int smaller=smaller(90,10,40);
+//		System.out.println("Smaller number is : "+smaller);
+//		System.out.println("Count of digits : "+countOfDigits(12345));
+//		System.out.println("sum of digits : "+sumOfDigits(12345));
+//		if(palindrome(1221)) {
+//			System.out.println("it is a palindrome");
+//		}else {
+//			System.out.println("it is not a palindrome");
+//		}
+//		System.out.println("Reverse number is : "+reverseNumber(12345));
+//		System.out.println("It is a prime number "+ isPrime(91));
+//		System.out.println("factorial of a number : "+factorial(6));
+		
+//		System.out.println("Is this armstrong number "+armstrongNumber(20));
 
+		System.out.println("Strong number is "+strongNumber(15));
+	}
 }
